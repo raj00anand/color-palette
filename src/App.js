@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ColorPalette from './components/ColorPalette';
 
-function App() {
+const App = () => {
+
+  document.body.style.backgroundColor = '#F1F6F9'
+  const handleColorSelection = (color) => {
+    console.log('Selected color:', color);
+    // Perform any other actions based on the selected color
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{textAlign: 'center', marginTop: '50px', fontFamily: 'VT323', fontSize: '30px'}}>
+      <h1>Color Palette</h1>
+      <ColorPalette onSelectColor={handleColorSelection} />
     </div>
   );
-}
+};
 
 export default App;
